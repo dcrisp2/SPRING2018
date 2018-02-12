@@ -1,0 +1,834 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://www.cse.msu.edu/~cse232/Weekly/week05/lab/lab05.html
+Subject: 
+Date: Tue, 12 Feb 2018 05:46:17 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--gLSwxoKq9MGioZFWCU6rp3d2kR2jhfjHXlI7lyacsr----"
+
+------MultipartBoundary--gLSwxoKq9MGioZFWCU6rp3d2kR2jhfjHXlI7lyacsr----
+Content-Type: text/html
+Content-ID: <frame-1738-6feb396c-afb9-4cd1-a7ed-4f8838e79287@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.cse.msu.edu/~cse232/Weekly/week05/lab/lab05.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><=
+meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+=09
+	<title></title>
+	<meta name=3D"generator" content=3D"LibreOffice 5.3.6.1 (MacOSX)">
+	<meta name=3D"created" content=3D"2017-01-23T14:48:47.322494081">
+	<meta name=3D"changed" content=3D"2017-10-02T14:54:43.604626000">
+	<style type=3D"text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		h1 { margin-bottom: 0.08in }
+		h1.western { font-family: "Liberation Sans", sans-serif; font-size: 18pt =
+}
+		h1.cjk { font-family: "Droid Sans Fallback"; font-size: 18pt }
+		h1.ctl { font-family: "FreeSans"; font-size: 18pt }
+		h2.western { font-family: "Liberation Sans", sans-serif; font-size: 16pt =
+}
+		h2.cjk { font-family: "Droid Sans Fallback"; font-size: 16pt }
+		h2.ctl { font-family: "FreeSans"; font-size: 16pt }
+		h3 { color: #808080 }
+		h3.western { font-family: "Liberation Sans", sans-serif }
+		h3.cjk { font-family: "Droid Sans Fallback" }
+		h3.ctl { font-family: "FreeSans" }
+		pre.cjk { font-family: "Nimbus Mono L", monospace }
+		h4.cjk { font-family: "Arial Unicode MS" }
+		h4.ctl { font-family: "Arial Unicode MS" }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang=3D"en-US" dir=3D"ltr">
+<p align=3D"center" style=3D"margin-top: 0.17in; margin-bottom: 0.08in; lin=
+e-height: 100%; page-break-after: avoid">
+<font face=3D"Liberation Sans, sans-serif"><font size=3D"6" style=3D"font-s=
+ize: 28pt"><b>CSE
+232, Lab Exercise #5</b></font></font></p>
+<h1 class=3D"western">Assignment Overview</h1>
+<p>The aim of this lab is:</p>
+<ul>
+	<li>
+<p>do a code review to learn the Google Code style rules</p>
+</li></ul>
+<ul>
+	<li>
+<p>learn to debug your C++ programs using <font face=3D"Liberation Mono, mo=
+nospace"><font size=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+	(the GNU Project Debugger). The purpose of a debugger is to allow
+	you to see what is going on inside your C++ program while it runs.
+	In addition, you can use <font face=3D"Liberation Mono, monospace"><font s=
+ize=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+	to see what your program was doing at the moment it crashed.</p>
+</li></ul>
+<h1 class=3D"western">Code Review</h1>
+<h2 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal">
+<font color=3D"#000000"><font face=3D"Times">Code Style</font></font></h2>
+<p style=3D"font-variant: normal; letter-spacing: normal; font-style: norma=
+l; font-weight: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Although
+the compiler can often compile very ugly source code, the primary
+reader of your code won't be computers, but other humans (including
+yourself). And in much the same way that well formatted essays are
+better at conveying information, well-formed code is easier to
+understand and debug. However, what does well-formed mean?</font></font></f=
+ont></p>
+<h3 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Conventions</font></font></font></h3>
+<p style=3D"orphans: 2; widows: 2"><span style=3D"font-variant:
+normal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=
+=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span style=3D"=
+font-style: normal"><span style=3D"font-weight: normal">
+Although
+there are a few different conventions for what exactly defines
+well-formed code, the important thing is to be consistent. For this
+assignment, we will be evaluating your Project 2 solutions with
+respect to the&nbsp;<a href=3D"https://google.github.io/styleguide/cppguide=
+.html">Google
+Style Guide</a>. The point of this part of the lab is to evaluate
+(and improve) code by using a consistent style. Warning, much of the
+code we have shown in videos and examples may not conform to Google's
+  standards.
+</span></span></span></font></font></font></span></p>
+<p style=3D"font-variant: normal; letter-spacing: normal; font-style: norma=
+l; font-weight: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Exchange
+your Project 2 solution with your partner. You will be editing their
+solution to either make if conform to the following rules or to add
+comments noting violations of the rules. Not all of the style guide
+will make sense given your incomplete mastery of C++, but we'll be
+focusing on the content you can apply.</font></font></font></p>
+<h3 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Rules</font></font></font></h3>
+<h4 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Naming</font></font></font></h4>
+<ul>
+	<li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#General_Naming_Rules"><span style=
+=3D"font-variant: normal"><font color=3D"#000000"><font face=3D"Times"><fon=
+t size=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: norma=
+l"><span style=3D"font-style: normal"><span style=3D"font-weight: normal">G=
+eneral
+	Naming Rules</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Variable_Names"><span style=3D"fon=
+t-variant: normal"><font color=3D"#000000"><font face=3D"Times"><font size=
+=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><sp=
+an style=3D"font-style: normal"><span style=3D"font-weight: normal">Variabl=
+e
+	Names</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"orphans: 2; widows: 2"><a href=3D"https://google.github.io/styl=
+eguide/cppguide.html#Function_Names"><span style=3D"font-variant: normal"><=
+font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font-=
+size: 12pt"><span style=3D"letter-spacing: normal"><span style=3D"font-styl=
+e: normal"><span style=3D"font-weight: normal">Function
+	Names</span></span></span></font></font></font></span></a></p>
+</li></ul>
+<h4 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Comments</font></font></font></h4>
+<ul>
+	<li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Comments"><span style=3D"font-vari=
+ant: normal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"3" =
+style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span styl=
+e=3D"font-style: normal"><span style=3D"font-weight: normal">Comments</span=
+></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Function_Comments"><span style=3D"=
+font-variant: normal"><font color=3D"#000000"><font face=3D"Times"><font si=
+ze=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><=
+span style=3D"font-style: normal"><span style=3D"font-weight: normal">Funct=
+ion
+	Comments</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"orphans: 2; widows: 2"><a href=3D"https://google.github.io/styl=
+eguide/cppguide.html#Implementation_Comments"><span style=3D"font-variant: =
+normal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=
+=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span style=3D"=
+font-style: normal"><span style=3D"font-weight: normal">Implementation
+	Comments</span></span></span></font></font></font></span></a></p>
+</li></ul>
+<h4 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Formatting</font></font></font></h4>
+<ul>
+	<li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Line_Length"><span style=3D"font-v=
+ariant: normal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"=
+3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span s=
+tyle=3D"font-style: normal"><span style=3D"font-weight: normal">Line
+	Length</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Spaces_vs._Tabs"><span style=3D"fo=
+nt-variant: normal"><font color=3D"#000000"><font face=3D"Times"><font size=
+=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><sp=
+an style=3D"font-style: normal"><span style=3D"font-weight: normal">Spaces
+	vs. Tabs</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Function_Calls"><span style=3D"fon=
+t-variant: normal"><font color=3D"#000000"><font face=3D"Times"><font size=
+=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><sp=
+an style=3D"font-style: normal"><span style=3D"font-weight: normal">Functio=
+n
+	Calls</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"orphans: 2; widows: 2"><a href=3D"https://google.github.io/styl=
+eguide/cppguide.html#Horizontal_Whitespace"><span style=3D"font-variant: no=
+rmal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=
+=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span style=3D"=
+font-style: normal"><span style=3D"font-weight: normal">Horizontal
+	Whitespace</span></span></span></font></font></font></span></a></p>
+</li></ul>
+<h4 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Functions</font></font></font></h4>
+<ul>
+	<li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Function_Parameter_Ordering"><span=
+ style=3D"font-variant: normal"><font color=3D"#000000"><font face=3D"Times=
+"><font size=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing:=
+ normal"><span style=3D"font-style: normal"><span style=3D"font-weight: nor=
+mal">Parameter
+	Ordering</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Write_Short_Functions"><span style=
+=3D"font-variant: normal"><font color=3D"#000000"><font face=3D"Times"><fon=
+t size=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: norma=
+l"><span style=3D"font-style: normal"><span style=3D"font-weight: normal">W=
+rite
+	Short Functions</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"margin-bottom: 0in; orphans: 2; widows: 2"><a href=3D"https://g=
+oogle.github.io/styleguide/cppguide.html#Reference_Arguments"><span style=
+=3D"font-variant: normal"><font color=3D"#000000"><font face=3D"Times"><fon=
+t size=3D"3" style=3D"font-size: 12pt"><span style=3D"letter-spacing: norma=
+l"><span style=3D"font-style: normal"><span style=3D"font-weight: normal">R=
+eference
+	Arguments</span></span></span></font></font></font></span></a></p>
+	</li><li>
+<p style=3D"orphans: 2; widows: 2"><a href=3D"https://google.github.io/styl=
+eguide/cppguide.html#Horizontal_Whitespace"><span style=3D"font-variant: no=
+rmal"><font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=
+=3D"font-size: 12pt"><span style=3D"letter-spacing: normal"><span style=3D"=
+font-style: normal"><span style=3D"font-weight: normal">Horizontal
+	Whitespace</span></span></span></font></font></font></span></a></p>
+</li></ul>
+<h4 class=3D"western" style=3D"font-variant: normal; letter-spacing: normal=
+; font-style: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Parting
+Words (copied from the end of the Google Style Guide)</font></font></font><=
+/h4>
+<p style=3D"font-variant: normal; letter-spacing: normal; font-style: norma=
+l; font-weight: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">Use
+common sense and BE CONSISTENT.</font></font></font></p>
+<p style=3D"font-variant: normal; letter-spacing: normal; font-style: norma=
+l; font-weight: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">If
+you are editing code, take a few minutes to look at the code around
+you and determine its style. If they use spaces around their if
+clauses, you should, too. If their comments have little boxes of
+stars around them, make your comments have little boxes of stars
+around them too.</font></font></font></p>
+<p style=3D"font-variant: normal; letter-spacing: normal; font-style: norma=
+l; font-weight: normal; orphans: 2; widows: 2">
+<font color=3D"#000000"><font face=3D"Times"><font size=3D"3" style=3D"font=
+-size: 12pt">The
+point of having style guidelines is to have a common vocabulary of
+coding so people can concentrate on what you are saying, rather than
+on how you are saying it. We present global style rules here so
+people know the vocabulary. But local style is also important. If
+code you add to a file looks drastically different from the existing
+code around it, the discontinuity throws readers out of their rhythm
+when they go to read it. Try to avoid this.</font></font></font></p>
+<p style=3D"orphans: 2; widows: 2"><font size=3D"3" style=3D"font-size: 12p=
+t"><span style=3D"font-variant: normal"><font color=3D"#000000"><font face=
+=3D"Times"><span style=3D"letter-spacing: normal"><span style=3D"font-style=
+: normal"><span style=3D"font-weight: normal">OK,
+enough writing about writing code; the code itself is much more
+interesting. Have fun!</span></span></span></font></font></span></font></p>
+<h1 class=3D"western">GDB and Debugging</h1>
+<p>Here are some of the useful actions that <font face=3D"Liberation Mono, =
+monospace"><font size=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+can perform:</p>
+<ul>
+	<li>
+<p>Start your program and step through it line by line</p>
+	</li><li>
+<p>Make your program stop on specified conditions</p>
+	</li><li>
+<p>Show the values of variables used by your program</p>
+	</li><li>
+<p>Examine the contents of any frame on the call stack</p>
+	</li><li>
+<p>Set breakpoints that will stop your program when it reaches
+	a certain point. Then you can step through part of the execution
+	using step and next, and type continue to resume regular execution.</p>
+</li></ul>
+<p>You will find the example programs you will debug during this lab
+in the lab directory.</p>
+<h1 class=3D"western">Setting up gdb for use with C++</h1>
+<p>Before we start using <font face=3D"Liberation Mono, monospace"><font si=
+ze=3D"2" style=3D"font-size: 10pt">gdb</font></font>,
+we need to download a GDB init file (which will be called <font face=3D"Lib=
+eration Mono, monospace"><font size=3D"2" style=3D"font-size: 10pt">.gdbini=
+t</font></font>)
+that does two things. First, it allows us to print C++ Standard
+Library containers and data members from within <font face=3D"Liberation Mo=
+no, monospace"><font size=3D"2" style=3D"font-size: 10pt">gdb</font></font>=
+.
+Second, it allows us to debug our programs while treating the C++
+constructs as the =E2=80=9Cbottom level=E2=80=9D; in other words, when we d=
+ebug a
+piece of a program that includes a vector, we don't want the debugger
+to go all the way into the code that defines the vector.</p>
+<p>You will find this file, called <font face=3D"Liberation Mono, monospace=
+"><font size=3D"2" style=3D"font-size: 10pt">gdbinit</font></font>
+in the lab directory; save it to your home directory. Once saved in
+your home directory, please rename the file to <font face=3D"Liberation Mon=
+o, monospace"><font size=3D"2" style=3D"font-size: 10pt">.gdbinit</font></f=
+ont>.
+Note that the initial dot means the file is hidden; so once you
+rename it, it will not be visible by default in the graphical file
+manager.</p>
+<p>Finally, debugging in Mimir is problematic. The system is setup
+for testing code and much of the underlying mechanisim confuses the
+debugger. Please do your work on x2go.</p>
+<h1 class=3D"western">Getting started with gdb</h1>
+<p>C and C++ programs compiled with the GNU compiler and the <font face=3D"=
+Liberation Mono, monospace"><font size=3D"2" style=3D"font-size: 10pt">-g</=
+font></font>
+option can be debugged using GNU's debugger <font face=3D"Liberation Mono, =
+monospace"><font size=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+(actually, you can use <font face=3D"Liberation Mono, monospace"><font size=
+=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+on code that is not compiled with <font face=3D"Liberation Mono, monospace"=
+><font size=3D"2" style=3D"font-size: 10pt">-g</font></font>,
+but unless you like trying to figure out how assembly code sequences
+map to your source code I wouldn't recommend doing so). Also, do not
+compile with an optimization flag (i.e. don't use <font face=3D"Liberation =
+Mono, monospace"><font size=3D"2" style=3D"font-size: 10pt">-O2</font></fon=
+t>),
+or <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"font=
+-size: 10pt">gdb</font></font>
+will have a hard time mapping optimized machine code to your source
+code. For example:</p>
+<pre class=3D"western">$ g++ -g -std=3Dc++11 -Wall myprog.cpp
+</pre><p>
+To start <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=
+=3D"font-size: 10pt">gdb</font></font>,
+invoke <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"=
+font-size: 10pt">gdb</font></font>
+on the executable file. For example:</p>
+<pre class=3D"western">$ gdb a.out
+</pre><p>
+If your program terminates with an error, then the operating system
+will often dump a core file that contains information about the state
+of the program when it crashed. <font face=3D"Liberation Mono, monospace"><=
+font size=3D"2" style=3D"font-size: 10pt">gdb</font></font>
+can be used to examine the contents of a core file:</p>
+<pre class=3D"western">$ gdb core a.out
+</pre><p>
+One good way to get started when you are trying to track down a bug,
+is to set breakpoints at the start of every function. In this way,
+you will quickly be able to determine which function has the problem.
+Then you can restart the program and step through the offending
+function line-by-line until you locate the problem exactly.</p>
+<h1 class=3D"western">Common gdb Commands</h1>
+<pre class=3D"western">gdb also understands abbreviations of commands, so y=
+ou can just type up to=20
+the unique part of a command name ("cont" for "continue", or "p" for "print=
+")
+
+<b>help</b>                  List classes of all gdb commands
+help &lt;topic&gt;          Shows help available for topic or command
+
+<b>bt</b>                 Shows stack: sequence of function calls executed =
+so far
+(or backtrace)        (good for pinpointing location of a program crash)
+(or where)
+
+<b>up</b>                   move up the stack
+<b>down</b>                 move down the stack
+
+<b>run</b>                   Starts program at the beginning
+  run command line args
+
+<b>break</b>
+  break &lt;line&gt;          Sets breakpoint at line number &lt;line&gt;
+  break &lt;func-name&gt;     Sets breakpoint at beginning of function &lt;=
+func-name&gt;
+    break main            Sets breakpoint at beginning of program
+
+<b>continue</b>              Continues execution from breakpoint
+
+<b>condition</b> &lt;bp-num&gt; &lt;exp&gt;   Sets breakpoint number &lt;bp=
+-num&gt; to break only if
+                           conditional expression &lt;exp&gt; is true
+<b>info</b> break            Shows current breakpoints
+disable [breakpoints] [bnums ...]  Disable one or more breakpoints
+enable [breakpoints] [bnums ...]   Enable one or more breakpoints=20
+clear &lt;line&gt;          Clears breakpoint at line number &lt;line&gt;
+clear &lt;func-name&gt;     Clears breakpoint at beginning of function &lt;=
+func-name&gt;
+delete &lt;bp-num&gt;       Deletes breakpoint number &lt;bp-num&gt;
+delete                Deletes all breakpoints
+
+<b>step</b> (or s)           Executes next line of program (steping into fu=
+nctions)
+  step &lt;count&gt;          Executes next &lt;count&gt; lines of program
+next (or n)           Like step, but treats a function call as a single
+  next &lt;count&gt;            instruction
+until &lt;line&gt;          Executes program until line number &lt;line&gt;
+
+
+<b>list</b>                  Lists next few lines of program
+  list &lt;line&gt;           Lists lines around line number &lt;line&gt; o=
+f program
+  list &lt;start&gt; &lt;end&gt;    Lists line numbers &lt;start&gt; throug=
+h &lt;end&gt;
+  list &lt;func-name&gt;      Lists lines at beginning of function &lt;func=
+-name&gt;
+
+<b>print</b> &lt;exp&gt; (or inspect &lt;exp&gt;  Displays the value of exp=
+ression &lt;exp&gt;
+
+ To print in different formats:
+   print/x  &lt;exp&gt; print the value of the expression in hexidecimal =
+=20
+                      (e.g. print/x 123   displays 0x7b)
+   print/t  &lt;exp&gt; print the value of the expression in binary=20
+                      (e.g. print/t 123   displays  1111011)
+   print/d  &lt;exp&gt; print the value of the expression as unsigned int f=
+ormat=20
+                      (e.g. print/d 0x1c displays 28)
+   print/c  &lt;exp&gt; print the ascii value of the expression=20
+                      (e.g. print/c 99  displays 'c')
+   print   (int)&lt;exp&gt; print the value of the expression as signed int=
+ format=20
+                      (e.g. print (int)'c' displays 99)
+
+ To represent different formats in the expression (the default is int):
+   0x suffix for hex: 0x1c  =20
+   0b suffix for binary: 0b101     =20
+       (e.g. print 0b101   displays 5,   print 0b101 + 3   displays 8)=20
+   you can also re-cast expressions using C-style syntax  (int)'c'
+
+ You can also use register values and values stored in memory locations=20
+   in expressions:
+   print $eax    # print the value stored in the eax register
+   print *(int *)0x8ff4bc10  # print the int value stored at=20
+                               memory address 0x8ff4bc10
+
+<b>quit</b>                  Quits gdb
+</pre><h1 class=3D"western">
+info commands for examining runtime and debugger state</h1>
+<p><font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"font=
+-size: 10pt">gdb</font></font>
+has a large set of info X commands for displaying information about
+different types of runtime state and about debugger state. Here is
+how to list all the info commands in help, and a description of what
+a few of the info commands do:</p>
+<pre class=3D"western">(gdb) help status           # lists a bunch of info =
+X commands
+
+(gdb) info frame            # list information about the current stack fram=
+e
+(gdb) info locals           # list local variable values of current stack f=
+rame
+(gdb) info args             # list argument values of current stack frame
+(gdb) info registers        # list register values
+(gdb) info breakpoints      # list status of all breakpoints</pre><h1 class=
+=3D"western">
+Sample gdb session</h1>
+<p>Below is output from two runs of gdb on programs from the lab
+directory. You will follow along by entering the commands on your own
+computer. Be sure you understand each step, and ask your TA if you
+don't understand why something is being done.</p>
+<p>Before you do the debugging, just run the a.out and see what
+happens.=20
+</p>
+<h2 class=3D"western">Run 1: badString.cpp</h2>
+<h3 class=3D"western">Looking at fn2</h3>
+<pre class=3D"western"><b>$ g++ -g -std=3Dc++11 -Wall badString.cpp      #-=
+- compile program with -g flag</b>
+
+<b>$ gdb a.out                                  #-- invoke gdb with the exe=
+cutable</b>
+
+GNU gdb (Debian 7.7.1+dfsg-5) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.=
+html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+...
+Reading symbols from a.out...done.
+
+
+<b>(gdb) break main                           #-- set a breakpoint at the b=
+eginning</b>
+                                               <b>of the main and the two f=
+unctions</b>
+Breakpoint 1 at 0x400d87: file badString.cpp, line 35.
+
+<b>(gdb) break fn2</b>
+Breakpoint 2 at 0x400c72: file badString.cpp, line 11.
+
+
+<b>(gdb) run                                  #-- run the program</b>
+Starting program: /user/yourname/cse232_201701/Lab05/a.out=20
+
+Breakpoint 1, main () at badString.cpp:35  # <b>first executable line in ma=
+in</b>=20
+35	  string my_string =3D "abcdefg";
+
+<b>(gdb) list                                 #-- list the source code near=
+ the </b>
+                                               <b>break point</b>
+30	  size_t indx =3D str.find(ch);
+31	  return str.substr(indx-1, 3);
+32	}
+33
+34	int main (){
+35	  string my_string =3D "abcdefg";
+36	  cout &lt;&lt; fn2(my_string) &lt;&lt; endl;
+37	  cout &lt;&lt; fn1(my_string) &lt;&lt; endl;
+38
+39	}
+
+<b>(gdb) list 15                             #-- list source code around li=
+ne 15</b>
+10	char fn2(string str){
+11	  char ch =3D str[0];
+12	  for (auto i =3D str.size(); i&gt;=3D0; --i){
+13	    cout &lt;&lt; ch &lt;&lt; endl;
+14	    if (str[i] &lt; ch)
+15	      ch =3D str[i];
+16	  }
+17	  return ch;
+18	}
+19
+
+<b>(gdb) list                                 #-- list the next few lines o=
+f code</b>
+20	/*
+21	  make a substring of the parameter str
+22	  of size 3, consisting of:
+23	  - the smallest chararter as found by fn2
+24	  - the character in front of the smallest
+25	  - the character in back of the smallest.
+26	  Thus fn1("cdeaxyz") --&gt; "eax"
+27	*/
+28	string fn1(string str){
+29	  char ch =3D fn2(str);
+
+<b>(gdb) next                                 #-- execute the next instruct=
+ion</b>
+36	  cout &lt;&lt; fn1(my_string) &lt;&lt; endl;
+
+
+<b>(gdb)                                      #-- hitting Enter executes th=
+e </b>
+                                               <b>previous command </b>
+                                               <b>(next in this case)</b>
+Breakpoint 3, fn2 (str=3D"abcdefg") at badString.cpp:11 <b># breakdpoint fo=
+r fn2</b>
+11	  char ch =3D str[0];
+
+<b>#-- also you can use the up and down arrows to scroll through previous c=
+ommands</b>
+
+<b>(gdb) print str                            #-- print str in fn2</b>
+$1 =3D "abcdefg"
+
+<b>(gdb) p ch                                 #-- p is short for the print =
+command</b>
+$2 =3D 0 '\000'                              # <b>ch in fn2 is not initiali=
+zed</b>
+
+<b>(gdb) print my_string				# my_string in main, not fn2</b>
+No symbol "my_string" in current context.
+
+<b>(gdb) bt                              # bt =3D=3D backtrace. Where in th=
+e call stack</b>
+##0  fn2 (str=3D"abcdefg") at badString.cpp:11
+#1  0x0000000000400e39 in main () at badString.cpp:36
+
+<p>
+To explain, activity goes from top to bottom. We are presently (#0) in
+fn2. That was called by main (#1). We we have 2 functions running: we
+are presently in fn2, which was called by main
+</p>
+
+<b>(gdb) up</b>
+#1  0x0000000000400e39 in main () at badString.cpp:36
+36	  cout &lt;&lt; fn2(my_string) &lt;&lt; endl;      <b># can look at </b>=
+<b>main</b><b> stuff now</b>
+
+<b>(gdb) print my_string</b>
+$3 =3D =E2=80=9Cabcdefg=E2=80=9D                            <b># my_string =
+is defined in main</b>
+
+<b>(gdb) down                                  </b>
+#0  fn2 (str=3D"abcdefg") at badString.cpp:11
+11	  char ch =3D str[0];                  <b># back to fn2, where we are ru=
+nning</b>
+
+(gdb) next=20
+12 for (auto i =3D str.size(); i&gt;=3D0; --i){
+
+<b>(gdb) n                            # n is next          </b>
+13	    cout &lt;&lt; ch &lt;&lt; endl;
+<b>(gdb) n                            # just stepping through the loop</b>
+a
+14	    if (str[i] &lt; ch)
+<b>(gdb) n</b>
+15	      ch =3D str[i];
+<b>(gdb) n</b>
+12	  for (auto i =3D str.size(); i&gt;=3D0; --i){  <b># back to the top of =
+the loop</b>
+<b>(gdb) print ch                                 # how=E2=80=99d we do? WT=
+H?</b>
+$4 =3D 0 '\000'                       =20
+<b>(gdb) print str[i]					# WTH?</b>
+$5 =3D (const char &amp;) @0x60205f: 0 '\000'
+<b>(gdb) print i</b>
+$6 =3D 7
+<img src=3D"http://www.cse.msu.edu/~cse232/Weekly/week05/lab/Red_star.svg" =
+name=3D"Image2" align=3D"left" width=3D"32" height=3D"30" border=3D"0">
+
+So what=E2=80=99s the problem here? In we executed Line 15 above but it did=
+n=E2=80=99t change ch. Tell your TA the problem.
+
+
+
+<b>(gdb) cont                                 #-- continue the execution</b=
+>
+Stop stepping through the loop, just run it until we hit a breakpoint or an=
+ error
+
+Program received signal SIGSEGV, Segmentation fault.  <b># oopsie poopsie</=
+b>
+0x0000000000400d19 in fn2 (str=3D"abcdefg") at badString.cpp:14
+14	    if (str[i] &lt; ch)
+
+<b>(gdb) bt</b>
+#0  0x0000000000400d19 in fn2 (str=3D"abcdefg") at badString.cpp:14
+#1  0x0000000000400e39 in main () at badString.cpp:36
+
+<b>(gdb) print ch</b>
+$7 =3D -128 '\200'              <b># there are no negative chars, so that=
+=E2=80=99s bad</b>
+
+<b>(gdb) print i</b>
+$8 =3D 18446744073709547431<b>     # ok, that is REALLY bad</b>
+
+<img src=3D"http://www.cse.msu.edu/~cse232/Weekly/week05/lab/Red_star.svg" =
+name=3D"Image1" align=3D"left" width=3D"32" height=3D"30" border=3D"0">
+
+So what=E2=80=99s the problem again? Show your TA.
+
+
+To Do: Read the fn2 code and fix it to run as it should. Look at the commen=
+ts
+</pre><h3 class=3D"western">
+Looking at fn1</h3>
+<pre class=3D"western" style=3D"font-weight: normal">
+  <p>
+Here is some debugging for fn1. I=E2=80=99m not explaining any of it, just
+showing some stuff. Notice I set a break point I wanted to change,
+searched the docs to find it. Command is <b>clear </b>
+  </p>
+ =20
+<p>
+Also, the lines numbers are now off because I stuck a =E2=80=9Cfn2_fixed=E2=
+=80=9D in the code to get it to run.
+</p>
+<b>(gdb) break main</b>
+Breakpoint 1 at 0x400e0f: file badString.cpp, line 40.
+<b>(gdb) break fn2_fixed</b>
+Breakpoint 2 at 0x400c72: file badString.cpp, line 20.
+<b>(gdb) unbreak fn2_fixed</b>
+Undefined command: "unbreak".  Try "help".
+<b>(gdb) help break</b>
+Set breakpoint at specified line or function.
+break [PROBE_MODIFIER] [LOCATION] [thread THREADNUM] [if CONDITION]
+PROBE_MODIFIER shall be present if the command is to be placed in a
+probe point.  Accepted values are `-probe' (for a generic, automatically
+guessed probe type) or `-probe-stap' (for a SystemTap probe).
+LOCATION may be a line number, function name, or "*" and an address.
+If a line number is specified, break at start of code for that line.
+If a function is specified, break at start of code for that function.
+If an address is specified, break at that exact address.
+With no LOCATION, uses current execution address of the selected
+stack frame.  This is useful for breaking on return to a stack frame.
+
+THREADNUM is the number from "info threads".
+CONDITION is a boolean expression.
+
+Multiple breakpoints at one place are permitted, and useful if t---Type &lt=
+;return&gt; to continue, or q &lt;return&gt; to quit---
+heir
+conditions are different.
+
+Do "help breakpoints" for info on other commands dealing with breakpoints.
+<b>(gdb) help breakpoints</b>
+Making program stop at certain points.
+
+List of commands:
+
+awatch -- Set a watchpoint for an expression
+break -- Set breakpoint at specified line or function
+break-range -- Set a breakpoint for an address range
+catch -- Set catchpoints to catch events
+catch assert -- Catch failed Ada assertions
+catch catch -- Catch an exception
+catch exception -- Catch Ada exceptions
+catch exec -- Catch calls to exec
+catch fork -- Catch calls to fork
+catch load -- Catch loads of shared libraries
+catch rethrow -- Catch an exception
+catch signal -- Catch signals by their names and/or numbers
+catch syscall -- Catch system calls by their names and/or numbers
+catch throw -- Catch an exception
+catch unload -- Catch unloads of shared libraries
+catch vfork -- Catch calls to vfork
+clear -- Clear breakpoint at specified line or function
+commands -- Set commands to be executed when a breakpoint is hit
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---q
+Quit
+<b>(gdb) clear</b>
+No source file specified.
+<b>(gdb) clear fn2_fixed</b>
+Deleted breakpoint 2
+<b>(gdb) break fn1</b>
+Breakpoint 3 at 0x400d8f: file badString.cpp, line 35.
+Breakpoint 1, main () at badString.cpp:41
+warning: Source file is more recent than executable.
+41	  string my_string =3D "abcdefg";
+<b>(gdb) n</b>
+42	  cout &lt;&lt; fn2_fixed(my_string) &lt;&lt; endl;
+<b>(gdb) continue</b>
+Continuing.
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  basic_string::substr: __pos (which is 18446744073709551615) &gt;=
+ this-&gt;size() (which is 7)
+
+Program received signal SIGABRT, Aborted.
+0x00007ffff7244067 in __GI_raise (sig=3Dsig@entry=3D6) at ../nptl/sysdeps/u=
+nix/sysv/linux/raise.c:56
+56	../nptl/sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+<b>(gdb) bt</b>
+#0  0x00007ffff7244067 in __GI_raise (sig=3Dsig@entry=3D6) at ../nptl/sysde=
+ps/unix/sysv/linux/raise.c:56
+#1  0x00007ffff7245448 in __GI_abort () at abort.c:89
+#2  0x00007ffff7b31b3d in __gnu_cxx::__verbose_terminate_handler() () from =
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7b2fbb6 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so=
+.6
+#4  0x00007ffff7b2fc01 in std::terminate() () from /usr/lib/x86_64-linux-gn=
+u/libstdc++.so.6
+#5  0x00007ffff7b2fe19 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/lib=
+stdc++.so.6
+#6  0x00007ffff7b85cdf in std::__throw_out_of_range_fmt(char const*, ...) (=
+) from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x00007ffff7b91752 in std::string::substr(unsigned long, unsigned long)=
+ const ()
+   from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#8  0x0000000000400e45 in fn1 (str=3D"abcdefg") at badString.cpp:37
+#9  0x0000000000400f0f in main () at badString.cpp:43
+
+<b>(gdb) up 9</b>
+#9  0x0000000000400f0f in main () at badString.cpp:43
+43	  cout &lt;&lt; fn1(my_string) &lt;&lt; endl;
+
+<b>(gdb) down 1</b>
+#8  0x0000000000400e45 in fn1 (str=3D"abcdefg") at badString.cpp:37
+37	  return str.substr(indx-1, 3);
+
+(<b>gdb) print indx</b>
+$1 =3D 0
+<img src=3D"http://www.cse.msu.edu/~cse232/Weekly/week05/lab/Red_star.svg" =
+name=3D"Image3" align=3D"left" width=3D"32" height=3D"30" border=3D"0">
+
+So what=E2=80=99s wrong? Can you fix it? Show your TA</pre><h1 class=3D"wes=
+tern">
+Keyboard shortcuts in gdb</h1>
+<p>gdb supports <b>command line completion</b>; by typing in a prefix
+you can hit <font face=3D"Liberation Mono, monospace"><font size=3D"2" styl=
+e=3D"font-size: 10pt">TAB</font></font>
+and <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"fon=
+t-size: 10pt">gdb</font></font>
+will try to complete the command line for you.</p>
+<p>Also, you can give just the <b>unique prefix</b> of a command as
+the command and <font face=3D"Liberation Mono, monospace"><font size=3D"2" =
+style=3D"font-size: 10pt">gdb</font></font>
+will execute it. For example, rather than entering the command <font face=
+=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"font-size: 10pt">=
+print
+x</font></font>, you can just enter <font face=3D"Liberation Mono, monospac=
+e"><font size=3D"2" style=3D"font-size: 10pt">p
+x</font></font> to print out the value of <font face=3D"Liberation Mono, mo=
+nospace"><font size=3D"2" style=3D"font-size: 10pt">x</font></font>.</p>
+<p>The <b>up and down arrow keys</b> can be used to scroll through
+previous command lines, so you do not need to re-type them each time.</p>
+<p>If you just hit <font face=3D"Liberation Mono, monospace"><font size=3D"=
+2" style=3D"font-size: 10pt">RETURN</font></font>
+at the <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D"=
+font-size: 10pt">gdb</font></font>
+prompt, <font face=3D"Liberation Mono, monospace"><font size=3D"2" style=3D=
+"font-size: 10pt">gdb</font></font>
+will execute the <b>most recent previous command</b> again. This is
+particularly useful if you are stepping through the execution, then
+you don't have to type next each time you want to execute the next
+instruction, you can just type it one time and then hit <font face=3D"Liber=
+ation Mono, monospace"><font size=3D"2" style=3D"font-size: 10pt">RETURN</f=
+ont></font>.</p>
+<h1 class=3D"western"></h1>
+
+
+</body><template shadowmode=3D"v0"><shadow></shadow><style></style></templa=
+te></html>
+------MultipartBoundary--gLSwxoKq9MGioZFWCU6rp3d2kR2jhfjHXlI7lyacsr----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.cse.msu.edu/~cse232/Weekly/week05/lab/Red_star.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8"?>
+<svg xmlns=3D"http://www.w3.org/2000/svg" width=3D"1235" height=3D"1175">
+<path fill=3D"#de0000" d=3D"M0,449h1235l-999,726 382-1175 382,1175z"/>
+</svg>
+------MultipartBoundary--gLSwxoKq9MGioZFWCU6rp3d2kR2jhfjHXlI7lyacsr------
